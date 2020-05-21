@@ -6,6 +6,7 @@ function* getShelf() {
     console.log('------->in getShelf');
     try {
         const response = yield axios.get('/api/shelf');
+        console.log ('------>getShelf RESPONSE',response.data)
         yield put({
             type: 'GET_SHELF',
             payload: response.data
@@ -16,6 +17,8 @@ function* getShelf() {
     }
 };//end getShelf
 
+function* shelfSaga(){
+    yield takeLatest('FETCH_SHELF', getShelf);
+}
 
-
-export default getShelf;
+export default shelfSaga;

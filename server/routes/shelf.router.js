@@ -6,11 +6,10 @@ const router = express.Router();
  * Get all of the items on the shelf
  */
 router.get('/', (req, res) => {
-    let queryString = `SELECT * "item";`;
+    let queryString = `SELECT * FROM "item";`;
     pool.query(queryString).then(result =>{
         res.send(result.rows);
     }).catch((error)=>{
-        alert('error in /api/shelf GET. Please check console.');
         console.log(error);
     })
 });

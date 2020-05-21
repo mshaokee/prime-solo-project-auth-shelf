@@ -22,5 +22,7 @@ const mapStateToProps = state => ({
   user: state.user,
 });
 
+// const mapPropsOnRedux = reduxState => ({newName: reduxState.name})
+
 // this allows us to use <App /> in index.js
 export default connect(mapStateToProps)(UserPage);

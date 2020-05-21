@@ -1,17 +1,21 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
 // This is one of our simplest components
 // It doesn't have local state, so it can be a function component.
 // It doesn't dispatch any redux actions or display any part of redux state
 // or even care what the redux state is, so it doesn't need 'connect()'
+//BUT WE NEED TO CONNECT to display our shelf items.
 
-const InfoPage = () => (
+const InfoPage = (props) => (
   <div>
-    <p>
-      Shelf Page
-      {JSON.stringify(this.reduxState.)}
-    </p>
+    <h1>Shelf Page</h1>
+      <div>
+      {props.reduxState.getShelf.map((shelf, index)=> {
+        return(<div key={index}><img src={shelf.image_url} alt="" width={250} /> <br/> {shelf.description}</div>)
+      })}
+    </div>
   </div>
 );
 
-export default InfoPage;
+const putPropsOnRedux = reduxState => ({ reduxState });
+export default connect(putPropsOnRedux)(InfoPage);
