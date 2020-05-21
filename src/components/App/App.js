@@ -64,4 +64,6 @@ class App extends Component {
   )}
 }
 
-export default connect()(App);
+//this allows us to use reducers and display on DOM
+const putPropsOnReduxState = reduxState => ({reduxState})
+export default connect(putPropsOnReduxState)(App);

@@ -9,6 +9,7 @@ const InfoPage = () => (
   <div>
     <p>
       Shelf Page
+      {JSON.stringify(this.reduxState.)}
     </p>
   </div>
 );

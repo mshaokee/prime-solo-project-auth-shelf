@@ -35,18 +35,18 @@ CREATE TABLE "item" (
 
 * Clone the repository for your group
 * Run `npm install`
-* Create a `.env` file at the root of the project and paste this line into the file:
+[x] Create a `.env` file at the root of the project and paste this line into the file:
+    ``` 
+    SERVER_SESSION_SECRET=gg6ntvvParVnqryddXKv
     ```
-    SERVER_SESSION_SECRET=superDuperSecret
-    ```
-    While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
+    [x] While you're in your new `.env` file, take the time to replace `superDuperSecret` with some long random string like `25POUbVtx6RKVNWszd9ERB9Bb6` to keep your application secure. Here's a site that can help you: [https://passwordsgenerator.net/](https://passwordsgenerator.net/). If you don't do this step, create a secret with less than eight characters, or leave it as `superDuperSecret`, you will get a warning.
 * Start postgres if not running already by using `brew services start postgresql`
 * Run `npm run server`
 * Run `npm run client`
 * Navigate to `localhost:3000`
 
 
-## Testing Routes with Postman
+<!-- ## Testing Routes with Postman
 
 To use Postman with this repo, you will need to set up requests in Postman to register a user and login a user at a minimum. 
 
@@ -59,19 +59,19 @@ Keep in mind that once you using the login route, Postman will manage your sessi
     2. `POST /api/user/login` will login a user, see body to change username/password
     3. `GET /api/user` will get user information, by default it's not very much
 
-After running the login route above, you will be able to try any other route you create that requires a logged in user!
+After running the login route above, you will be able to try any other route you create that requires a logged in user! -->
 
 ## FEATURES
 
-We recommend working in groups of 4 or 6 and pair programming for this project. Each pair should take on one of the following features. You will want to identify any tasks that need to be finished in a particular order as a group to avoid merge conflicts. Each of the following features should be on a separate route.
+We recommend working in groups of 4 or 6 and pair programming for this project. Each pair should take on one of the following features. You will want to identify any tasks that need to be finished in a particular order as a group to avoid merge conflicts. Each of the following features should be on a separate route.  [x] Livesharing.
 
 ### Display all Items
 
-The shelf (info) page should show all of the items stored in the database in a list or table.
+[ ] The shelf (info) page should show all of the items stored in the database in a list or table.
 
 ### Add Items to the Shelf
 
-The Shelf (Info) Page should allow a user to add a new item to the database (which should immediately appear in the list).
+[ ] The Shelf (Info) Page should allow a user to add a new item to the database (which should immediately appear in the list).
 
 > NOTE: Image url should be a full path to an existing image on the web. You should not attempt to implement image upload for this.
 
