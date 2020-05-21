@@ -7,9 +7,9 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
     let queryString = `SELECT * FROM "item";`;
-    pool.query(queryString).then(result =>{
+    pool.query(queryString).then(result => {
         res.send(result.rows);
-    }).catch((error)=>{
+    }).catch((error) => {
         console.log(error);
     })
 });
@@ -19,7 +19,17 @@ router.get('/', (req, res) => {
  * Add an item for the logged in user to the shelf
  */
 router.post('/', (req, res) => {
-
+    let userId = req.user.id
+    console.log('User is',req.user, userId)
+    let url = req.body.url;
+    let desc = req.body.description;
+    let queryString = `INSERT INTO "item" (description, image_url, user_id) VALUES ($1, $2, $3);`;
+    pool.query(queryString, [desc, url, userId]).then((result)=>{
+        res.sendStatus(201);
+    }).catch((error)=>{
+        console.log('There is an error in shelf.router.post',error)
+        res.sendStatus(500);
+    })
 });
 
 

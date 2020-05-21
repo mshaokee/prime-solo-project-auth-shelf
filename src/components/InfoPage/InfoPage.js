@@ -13,7 +13,7 @@ const InfoPage = (props) => (
     <div>
       <h1>Shelf Page</h1>
         <AddPage />
-      <div>
+    <div>
         {props.reduxState.getShelf.map((shelf, index) => {
           return (<div key={index}><img src={shelf.image_url} alt="" width={250} /> <br /> {shelf.description}</div>)
         })}
