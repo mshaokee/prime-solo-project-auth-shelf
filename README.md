@@ -71,7 +71,7 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 
 ### Add Items to the Shelf
 
-[ ] The Shelf (Info) Page should allow a user to add a new item to the database (which should immediately appear in the list).
+[x] The Shelf (Info) Page should allow a user to add a new item to the database (which should immediately appear in the list).
 
 > NOTE: Image url should be a full path to an existing image on the web. You should not attempt to implement image upload for this.
 
