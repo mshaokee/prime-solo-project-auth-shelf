@@ -67,7 +67,7 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 
 ### Display all Items
 
-[ ] The shelf (info) page should show all of the items stored in the database in a list or table.
+[x] The shelf (info) page should show all of the items stored in the database in a list or table.
 
 ### Add Items to the Shelf
 
