@@ -6,7 +6,7 @@ const router = express.Router();
  * Get all of the items on the shelf
  */
 router.get('/', (req, res) => {
-    let queryString = `SELECT * FROM "item";`;
+    let queryString = `SELECT * FROM "item" ORDER BY id;`;
     pool.query(queryString).then(result => {
         res.send(result.rows);
     }).catch((error) => {
@@ -56,6 +56,12 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     let userId = req.params.id;
     let query = `UPDATE "item" SET description=$1, image_url=$2 WHERE id=$3;`;
+    pool.query(query, [req.body.description, req.body.url, userId]).then((result)=>{
+        res.sendStatus(200);
+    }).catch((error)=>{
+        console.log('An error occurred in server side PUT:', error)
+        res.sendStatus(500);
+    });//end pool query
 });
 
 
