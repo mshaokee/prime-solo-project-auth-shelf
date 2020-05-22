@@ -7,15 +7,23 @@ import AddPage from './AddPage';
 // or even care what the redux state is, so it doesn't need 'connect()'
 //BUT WE NEED TO CONNECT to display our shelf items.
 
-
+const deleteItem = (id, props) => {
+  console.log('in deleteItem', id);
+  props.dispatch({
+    type: 'DELETE_ITEM',
+    payload: id
+  })
+};//end deleteItem
 
 const InfoPage = (props) => (
+
     <div>
       <h1>Shelf Page</h1>
         <AddPage />
     <div>
         {props.reduxState.getShelf.map((shelf, index) => {
-          return (<div key={index}><img src={shelf.image_url} alt="" width={250} /> <br /> {shelf.description}</div>)
+          return (<div key={index}><img src={shelf.image_url} alt="" width={250} /> <br /> {shelf.description} 
+          <button onClick={() => deleteItem(shelf.id, props)}>Delete</button></div>)
         })}
       </div>
     </div>

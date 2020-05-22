@@ -1,12 +1,15 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import axios from 'axios';
 
-//axios GET request shelf data
+
+//aexios GET request shelf data
 function* getShelf() {
+
+
     console.log('------->in getShelf');
     try {
         const response = yield axios.get('/api/shelf');
-        console.log ('------>getShelf RESPONSE',response.data)
+        console.log('------>getShelf RESPONSE', response.data)
         yield put({
             type: 'GET_SHELF',
             payload: response.data
@@ -17,7 +20,7 @@ function* getShelf() {
     }
 };//end getShelf
 
-function* shelfSaga(){
+function* shelfSaga() {
     yield takeLatest('FETCH_SHELF', getShelf);
 }
 
