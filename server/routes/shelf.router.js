@@ -54,7 +54,8 @@ router.delete('/:id', (req, res) => {
  * Update an item if it's something the logged in user added
  */
 router.put('/:id', (req, res) => {
-
+    let userId = req.params.id;
+    let query = `UPDATE "item" SET description=$1, image_url=$2 WHERE id=$3;`;
 });
 
 

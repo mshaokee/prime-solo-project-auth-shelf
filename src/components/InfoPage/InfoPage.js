@@ -11,14 +11,21 @@ const deleteItem = (id, props) => {
   })
 };//end deleteItem
 
-const editItem = (description, url, props) => {
-  console.log('in editItem');
-
+const editItem = (id, description, url, props, originalDes, originalUrl) => {
+  console.log('Make Changes Clicked');
+  if (description === ''){
+    description = originalDes;
+  }
+  if(url === ''){
+    url = originalUrl
+  }
+  // console.log ('Payload is:',description, url)
   props.dispatch({
     type: 'EDIT_ITEM',
     payload: {
-      description: description,
-      url: url
+      id,
+      description,
+      url
     }
   })
 };//end edit item
@@ -42,12 +49,11 @@ const InfoPage = (props) => {
               <br />
               <img src={shelf.image_url} alt="" width={250} />
               <br />
-              <input name="description" placeholder="DESCRIPTION" onChange={(event) => setDescription(event.target.value)} />
-              <input name="url" placeholder="URL" onChange={(event) => setUrl(event.target.value)} />
+              <input defaultValue={shelf.description} name="description" placeholder="DESCRIPTION" onChange={(event) => setDescription(event.target.value)} />
+              <input defaultValue={shelf.image_url} name="url" placeholder="URL" onChange={(event) => setUrl(event.target.value)} />
               <br />
-
               <button onClick={() => deleteItem(shelf.id, props)}>Delete</button>
-              <button onClick={() => editItem(description, url, props)}>Make Changes</button>
+              <button onClick={() => editItem(shelf.id, description, url, props, shelf.description, shelf.image_url)}>Make Changes</button>
             </div>
           );
         })}
