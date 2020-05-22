@@ -83,8 +83,8 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 
 ## Stretch Goals
 
-[ ] Ability to edit an existing item on the shelf from the info page.
-- Have anyone, not just logged in users, be able to see what is on the shelf, but not edit, remove, nor add.
+[x] Ability to edit an existing item on the shelf from the info page.
+[x] Have anyone, not just logged in users, be able to see what is on the shelf, but not edit, remove, nor add.
 - A new route to display all items for a specific user. `/shelf/2` would display items uploaded by user with the id of `2`.
 - Filestack for image upload on the add page.
 - Style with Material-UI

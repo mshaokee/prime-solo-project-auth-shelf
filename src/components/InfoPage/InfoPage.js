@@ -32,7 +32,7 @@ const editItem = (id, description, url, props, originalDes, originalUrl) => {
 
 //BEGIN MAIN FUNCTION COMPONENT
 const InfoPage = (props) => {
-
+  console.log('User is', props.reduxState.user.id);
   const [description, setDescription] = useState('');
   const [url, setUrl] = useState('');
   // console.log('SHOW DESCRIPTION AND URL CHANGE', description, url);
@@ -49,11 +49,17 @@ const InfoPage = (props) => {
               <br />
               <img src={shelf.image_url} alt="" width={250} />
               <br />
-              <input defaultValue={shelf.description} name="description" placeholder="DESCRIPTION" onChange={(event) => setDescription(event.target.value)} />
-              <input defaultValue={shelf.image_url} name="url" placeholder="URL" onChange={(event) => setUrl(event.target.value)} />
-              <br />
-              <button onClick={() => deleteItem(shelf.id, props)}>Delete</button>
-              <button onClick={() => editItem(shelf.id, description, url, props, shelf.description, shelf.image_url)}>Make Changes</button>
+
+              {props.reduxState.user.id && (
+                <>
+                  <input defaultValue={shelf.description} name="description" placeholder="DESCRIPTION" onChange={(event) => setDescription(event.target.value)} />
+                  <input defaultValue={shelf.image_url} name="url" placeholder="URL" onChange={(event) => setUrl(event.target.value)} />
+                  <br />
+                  <button onClick={() => deleteItem(shelf.id, props)}>Delete</button>
+                  <button onClick={() => editItem(shelf.id, description, url, props, shelf.description, shelf.image_url)}>Make Changes</button>
+                </>
+              )}
+          
             </div>
           );
         })}
