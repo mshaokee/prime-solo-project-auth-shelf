@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { useState } from 'react';
 
 const AddPage = (props) => { /* This is a FUNCTIONAL COMPONENT with an ONCHANGE EVENT using useState from 'react' */
+    //setUrl and setDescription are the function. url and description are the 'name' called from the name field input.
     const [description, setDescription] = useState('');
     const [url, setUrl] = useState('');
     // console.log('This is our onChange description:', description);
@@ -19,17 +20,3 @@ const AddPage = (props) => { /* This is a FUNCTIONAL COMPONENT with an ONCHANGE 
 
 const putPropsOnRedux = reduxState => ({ reduxState });
 export default connect(putPropsOnRedux)(AddPage);
-
-/*
-import React from 'react';
-
-function App() {
-    const [firstName, setFirstName] = useState('');
-
-    return (
-        <input name="firstName" onChange={e => setFirstName(e.target.value)} />
-    );
-}
-
-export default App;
-*/

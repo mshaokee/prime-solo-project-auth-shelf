@@ -27,7 +27,7 @@ input {
   border-radius: 4px;
   color: #f8f8f8;
   min-height: 50px;
-  min-width: 100px;
+  min-width: 100px;  
   outline:0;
   cursor: pointer;
 }
@@ -48,3 +48,6 @@ input {
     cursor: pointer;
 }
 
+.item{
+    margin: 5% 20%;
+}
