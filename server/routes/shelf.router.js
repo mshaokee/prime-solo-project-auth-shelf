@@ -19,8 +19,8 @@ router.get('/', (req, res) => {
  * Add an item for the logged in user to the shelf
  */
 router.post('/', (req, res) => {
-    let userId = req.user.id
-    console.log('User is',req.user, userId)
+    let userId = req.user.id;
+    console.log('User is',req.user, userId);
     let url = req.body.url;
     let desc = req.body.description;
     let queryString = `INSERT INTO "item" (description, image_url, user_id) VALUES ($1, $2, $3);`;
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 router.delete('/:id', (req, res) => {
     let itemId = req.params.id;
     let userId = req.user.id;
-    console.log(req.user.username, 'is deleting', itemId);
+    // console.log(req.user.username, 'is deleting', itemId);
     let queryString = `DELETE FROM "item" WHERE id=$1 AND user_id=$2;`
     pool.query(queryString, [itemId, userId]).then((result)=> {
         res.sendStatus(200);

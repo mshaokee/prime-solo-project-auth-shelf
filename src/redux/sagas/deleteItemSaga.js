@@ -10,7 +10,7 @@ function* deleteItem(action){
         yield put ({type: 'FETCH_SHELF'})
     }catch(err){
         console.log(err)
-    };//end tr
+    };//end catch
 };//end deleteItem generator
 
 

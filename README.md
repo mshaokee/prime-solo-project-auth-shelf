@@ -77,13 +77,13 @@ We recommend working in groups of 4 or 6 and pair programming for this project. 
 
 ### Delete Items from the Shelf
 
-[ ] An authenticated user should be able to delete items from the shelf if they were the one who added the item to the shelf.
+[x] An authenticated user should be able to delete items from the shelf if they were the one who added the item to the shelf.
 
 > NOTE: This should require client and server changes. An unauthenticated attacker from Postman should not be able to delete anything.
 
 ## Stretch Goals
 
-- Ability to edit an existing item on the shelf from the info page.
+[ ] Ability to edit an existing item on the shelf from the info page.
 - Have anyone, not just logged in users, be able to see what is on the shelf, but not edit, remove, nor add.
 - A new route to display all items for a specific user. `/shelf/2` would display items uploaded by user with the id of `2`.
 - Filestack for image upload on the add page.

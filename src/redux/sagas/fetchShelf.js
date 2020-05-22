@@ -5,7 +5,6 @@ import axios from 'axios';
 //aexios GET request shelf data
 function* getShelf() {
 
-
     console.log('------->in getShelf');
     try {
         const response = yield axios.get('/api/shelf');
